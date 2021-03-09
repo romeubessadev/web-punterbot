@@ -1,0 +1,39 @@
+<div id="content" >
+  <div class="header pb-3 m-3">
+    <i class="fa-trophy fas pr-1"></i>
+    <span class="h4 pl-2">Lista de Ligas ({{qtd}})</span>
+  </div>
+  <div class="row">
+    <div class="col-12 mb-4">
+      <app-card [zeroPadding]="false">
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-12">
+            <app-input [element]="id" [form]="pesquisa"></app-input>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-12">
+            <app-input [element]="nome" [form]="pesquisa"></app-input>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center">
+            <app-button class="mr-2" [button]="pesquisar" (bClick)="gridPaginate.buscarRegistros()"></app-button>
+          </div>
+        </div>
+      </app-card>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-12">
+      <app-card>
+        <app-grid-paginate [acoes]="acoes" [colunas]="colunas" [service]="ligaService" [form]="pesquisa">
+          <ng-template grid="logo" let-row="row">
+            <app-avatar [titulo]="row.nome" [img]="row.logo"></app-avatar>
+          </ng-template>
+          <ng-template grid="temporadas" let-row="row">
+            <span>{{row.temporadas?.length}}</span>
+          </ng-template>
+        </app-grid-paginate>
+      </app-card>
+    </div>
+  </div>
+</div>

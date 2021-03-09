@@ -1,0 +1,25 @@
+.imagem {
+  max-width: 180px;
+  transition: all .15s ease;
+  transform: translate(-50%, -30%);
+  border-radius: .375rem;
+}
+
+.profile-cover {
+  min-height: 600px;
+}
+
+.bg-secondary{
+  background-color: #fff !important;
+  border: 10px;
+}
+
+.btn-success {
+  background-color: #0db665 !important;
+  border-color: #0db665 !important;
+  transition: filter 0.2s;
+}
+
+.btn-success:hover {
+  filter: brightness(90%);
+}

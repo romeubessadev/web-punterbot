@@ -1,0 +1,20 @@
+<div class="card card-stats mb-4 mb-xl-0 shadow" *ngIf="card">
+  <div class="card rounded">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <h5 class="card-title text-uppercase text-black mb-0">{{card.titulo}}</h5>
+          <span class="h2 font-weight-bold text-dark mb-0">{{card.sub}}</span>
+        </div>
+        <div class="col-auto">
+          <div class="icon icon-shape bg-{{card.cor}} text-white rounded-circle shadow">
+            <span class="font-weight-bold h1 text-white m-2">{{card.icone}}</span>
+          </div>
+        </div>
+      </div>
+      <p [routerLink]="card.rota" class="mt-3 mb-0 text-muted text-sm">
+        <a href="#!" class="btn btn-secondary btn-sm mr-9">Ver Mais</a>
+      </p>
+    </div>
+  </div>
+</div>

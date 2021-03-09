@@ -1,0 +1,25 @@
+.action {
+  padding: 0.3rem !important;
+  color: white !important;
+}
+
+td {
+  vertical-align: middle !important;
+}
+
+.btn-icon {
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0;
+  z-index: 1;
+  -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  width: 30px;
+  height: 30px;
+}
+
+.table-responsive {
+  padding-bottom: 50px;
+}

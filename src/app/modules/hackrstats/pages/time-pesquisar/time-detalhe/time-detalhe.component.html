@@ -1,0 +1,36 @@
+<app-card id="content" *ngIf="time" class="container-fluid mt--7" [zeroPadding]="false">
+  <div class="row">
+    <div class="col-12">
+      <div class="row justify-content-center ">
+        <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+          <img [alt]="time.nome" [src]="time.logo">
+        </div>
+        <div class="col-lg-8 col-md-6 col-sm-12">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-12 text-center">
+              <app-mensagem scope="time"></app-mensagem>
+            </div>
+          </div>
+          <form (ngSubmit)="salvar()">
+            <div class="row">
+              <div class="col-lg-6 col-md-12 col-sm-12">
+                <app-input [form]="timeForm.form" [element]="timeForm.nome"></app-input>
+              </div>
+              <div class="col-lg-4 col-md-12 col-sm-12">
+                <app-input [form]="timeForm.form" [element]="timeForm.twitter"></app-input>
+              </div>
+              <div class="col-lg-2 col-md-12 col-sm-12">
+                <app-input [form]="timeForm.form" [element]="timeForm.anoFundado"></app-input>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <app-button [disabled]="timeForm.invalid" [button]="btnSalvar"></app-button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-card>

@@ -1,0 +1,79 @@
+<div class="row">
+  <div class="col-xl-4 mb-5 mb-xl-0">
+    <div class="card shadow">
+      <div class="row justify-content-center">
+        <div class="col-lg-3 order-lg-2">
+          <div class="card-profile-image">
+            <a href="javascript:void(0)">
+              <img [src]="usuarioForm.getLogoOrDefault | safe: 'url'" class="rounded-circle">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="card-body pt-0 pt-md-4">
+        <div class="row ">
+          <div class="col">
+            <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+              <app-image-resize
+                titulo="Foto de Perfil"
+                (eventImageCropped)="fotoDePerfilMudou($event)"></app-image-resize>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-12 text-center pt-6">
+            <div class="text-center">
+              <h4>{{usuario.nome}}</h4>
+            </div>
+            <div>
+              <span class="h5">{{usuario.email}}</span>
+            </div>
+            <h4 class="text-warning" *ngIf="usuario.senhaReset">{{usuario.senhaReset}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-8 order-xl-1">
+    <div class="card bg-secondary shadow">
+      <div class="card-header bg-white border-0" *ngIf="titulo">
+        <div class="row align-items-center">
+          <div class="col-8">
+            <h3 class="mb-0">{{titulo}}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="card-body bg-white">
+        <h6 class="heading-small text-muted mb-4">Meus Dados</h6>
+        <form *ngIf="usuarioForm">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-12 text-center">
+              <app-mensagem scope="usuario"></app-mensagem>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <app-input [element]="usuarioForm.nome" [form]="usuarioForm.form"></app-input>
+              <app-input [element]="usuarioForm.primeiroNome" [form]="usuarioForm.form"></app-input>
+              <app-input [element]="usuarioForm.contato" [form]="usuarioForm.form"></app-input>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 ">
+              <app-input *ngIf="ehAdministrador()" [element]="usuarioForm.email" [form]="usuarioForm.form"></app-input>
+              <app-input *ngIf="!ehAdministrador()" [element]="usuarioForm.email.setDisabled(true)" [form]="usuarioForm.form"></app-input>
+              <app-input [element]="usuarioForm.segundoNome" [form]="usuarioForm.form"></app-input>
+              <app-input [element]="usuarioForm.plano" [form]="usuarioForm.form"></app-input>
+              <app-select *ngIf="ehAdministrador()" [element]="usuarioForm.plano" [form]="usuarioForm.form"></app-select>
+              <app-input *ngIf="ehAdministrador()" [element]="usuarioForm.codigoIndicacao"  [form]="usuarioForm.form"></app-input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-lg-4 col-sm-4 col-md-4 pt-1">
+              <app-button (bClick)="emmitSalvar()" [disabled]="usuarioForm.form.invalid"
+                          [button]="btnSalvar"></app-button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

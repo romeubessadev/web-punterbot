@@ -1,0 +1,17 @@
+<div class="form-group mb-3" *ngIf="element" [formGroup]="form">
+  <div class="input-group input-group-alternative transp" >
+    <div class="input-group-prepend border-radius-left" *ngIf="element.icon">
+      <span class="input-group-text transp-icon"><i [class]="element.icon"></i></span>
+    </div>
+    <input class="form-control transp-form font-weight-bold"
+           [formControlName]="element.name"
+           [type]="element.type"
+           [mask]="element.mask"
+           [placeholder]="element.label"
+           [attr.maxlength]="element.maxLength"
+           [id]="element.id">
+  </div>
+  <div class="input-info " *ngIf="element.info">
+    <span>{{element.info}}</span>
+  </div>
+</div>

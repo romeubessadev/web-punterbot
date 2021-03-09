@@ -1,0 +1,11 @@
+.input-info {
+  color: #000 !important;
+  font-size: 0.78rem;
+  text-align: center;
+  padding: 5px;
+}
+
+.has-danger::after ,
+.has-success::after {
+  content: none !important;
+}

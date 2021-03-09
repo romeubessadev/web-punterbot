@@ -1,0 +1,48 @@
+<div class="table-responsive">
+  <table class="table align-items-center table-flush">
+    <thead class="thead-light">
+    <tr>
+      <th *ngFor="let col of colunas" class="mouse-pointer" scope="col">{{col.label}}</th>
+      <th *ngIf="acoes != null && acoes.length > 0 && lista != null && lista.length > 0"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-template [ngForOf]="lista" let-index="index" let-row ngFor>
+      <tr>
+        <td *ngFor="let col of colunas">
+          <span *ngIf="!findTemplate(col)">{{row[col.name]}}</span>
+          <ng-container [ngTemplateOutletContext]="{row: row, index: index}"
+                        [ngTemplateOutlet]="findTemplate(col)">
+          </ng-container>
+        </td>
+
+        <td *ngIf="acoes!= null && acoes.length > 0">
+          <div ngbDropdown placement="bottom-right">
+            <a class="btn btn-sm btn-icon-only text-light" ngbDropdownToggle>
+              <i class="fas fa-ellipsis-v"></i>
+            </a>
+            <div ngbDropdownMenu class="dropdown-menu-right dropdown-menu-arrow">
+              <a (click)="action.click(row, index)"
+                 class="dropdown-item cursor-pointer"
+                 *ngFor="let action of acoes">
+                <i aria-hidden="true" class="{{action.icon}} mr-2"></i>
+                {{action.label}}</a>
+            </div>
+          </div>
+
+        </td>
+
+
+      </tr>
+      <ng-container *ngIf="subRow" [ngTemplateOutletContext]="{row: row, index: index}"
+                    [ngTemplateOutlet]="subRow">
+      </ng-container>
+    </ng-template>
+    <tr *ngIf="lista != null  ? lista.length == 0 : false" class="text-danger text-center">
+      <td [attr.colspan]="colunas.length">
+        <h5>Não há registros</h5>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

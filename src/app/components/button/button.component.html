@@ -1,0 +1,9 @@
+<button
+  *ngIf="button"
+  [disabled]="loadDisable || disabled"
+  [ngClass]="{'btn-icon': button.icon}"
+  [style]="button.style"
+  [type]="button.type" class="btn btn-3 {{button.color}} {{button.btnClass}}" type="button">
+  <span *ngIf="button.icon" class="btn-inner--icon"><i class="{{button.icon}} fa-lg"></i></span>
+  <span *ngIf="button.label" class="btn-inner--text text-uppercase">{{button.label}}</span>
+</button>

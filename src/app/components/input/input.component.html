@@ -1,0 +1,11 @@
+<div class="form-group mb-3 " *ngIf="element" [formGroup]="form" [ngClass]="{'has-danger': showError()}">
+  <label class="form-control-label" [for]="element.id">{{element.label}}</label>
+  <input class="form-control form-control-alternative"
+         [formControlName]="element.name"
+         [name]="element.name"
+         [type]="element.type"
+         [mask]="element.mask"
+         [placeholder]="element.placeholder"
+         [attr.maxlength]="element.maxLength"
+         [id]="element.id">
+</div>

@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+@import "animate.css";
+@import "argon.css";
+
+html, body {
+  height: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.bg-default {
+  background-color: #f8f8f8 !important;
+}
+
+.bg-hackrstas {
+  background: linear-gradient(87deg, #000000 0, #000000bd 100%) !important;
+}
+
+.bg-hackrstas-escuro {
+  background: linear-gradient(3400deg, #040404d9 40%, #000000d1 100%) !important;
+}
+
+.bg-azul-escuro {
+  background: linear-gradient(180deg, #104892 0%, #080924 100%);
+}
+
+.bg-preto-escuro {
+  background: linear-gradient(3400deg, #000000b3 40%, #0000006b 100%) !important;
+}
+
+.bg-transparent {
+  background-color: #0000007a !important;
+  color: #fff;
+}
+
+.profile-cover {
+  background-repeat: no-repeat;
+  background-image: url("assets/img/messi.png");
+  background-position: center top;
+}
+
+.bg-futebol {
+  background-image: url("https://www.api-football.com/public/img/home1/welcome-bg.png");
+  min-height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

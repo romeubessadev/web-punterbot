@@ -1,0 +1,13 @@
+.btn-success {
+  background-color: #74b147 !important;
+  border: none !important;;
+  border-bottom: 2px solid #47801e !important;
+  border-radius: 3px !important;
+  transition: filter 0.2s;
+}
+
+.btn-success:hover {
+  filter: brightness(70%);
+}
+
+

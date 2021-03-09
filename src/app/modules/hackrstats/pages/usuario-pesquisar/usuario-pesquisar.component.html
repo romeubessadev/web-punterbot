@@ -1,0 +1,38 @@
+<div id="content">
+  <div class="header pb-4 m-3">
+    <i class="fa fa-user-friends pr-1"></i>
+    <span class="h4 pl-2">Lista de Usuários ({{qtd}})</span>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <app-card [zeroPadding]="false">
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-12">
+            <app-input [element]="nome" [form]="pesquisaForm"></app-input>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-12">
+            <app-input [element]="email" [form]="pesquisaForm"></app-input>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-12">
+            <app-input [element]="contato" [form]="pesquisaForm"></app-input>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center">
+            <app-button class="mr-2" [button]="pesquisar" (bClick)="gridPaginate.buscarRegistros()"></app-button>
+            <app-button class="mr-2" [button]="novo" (bClick)="irParaNovo()"></app-button>
+          </div>
+        </div>
+      </app-card>
+    </div>
+  </div>
+  <div class="row mt-4 mb-4">
+    <div class="col-12">
+      <app-card>
+        <app-grid-paginate [acoes]="acoes" [colunas]="colunas" [service]="usuarioService" [form]="pesquisaForm">
+        </app-grid-paginate>
+      </app-card>
+    </div>
+  </div>
+</div>

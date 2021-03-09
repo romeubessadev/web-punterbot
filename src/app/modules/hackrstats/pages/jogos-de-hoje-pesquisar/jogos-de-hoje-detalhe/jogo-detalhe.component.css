@@ -1,0 +1,15 @@
+.text-green {
+  color: #0e6d03 !important;
+}
+
+@media (max-width: 991px) {
+  .grid-visita {
+    padding-top: 30px;
+  }
+}
+
+.text-black {
+  color: #000 !important;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}

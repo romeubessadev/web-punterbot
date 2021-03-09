@@ -1,0 +1,55 @@
+<app-grid
+  [colunas]="colunas"
+  [acoes]="acoes"
+  [lista]="registros">
+
+  <ng-template [ngForOf]="gridTemplate" let-grid let-index="index" ngFor>
+    <ng-template [grid]="grid.grid" let-row="row">
+
+      <ng-container [ngTemplateOutletContext]="{row: row}"
+                    [ngTemplateOutlet]="grid.template">
+      </ng-container>
+
+    </ng-template>
+
+  </ng-template>
+
+  <ng-template #subRow let-row="row">
+    <ng-container *ngIf="subRowPaginate"
+                  [ngTemplateOutletContext]="{row: row}"
+                  [ngTemplateOutlet]="subRowPaginate">
+
+    </ng-container>
+  </ng-template>
+
+
+</app-grid>
+
+<div class="mt-3">
+  <nav aria-label="">
+    <ul class="pagination justify-content-center">
+      <li (click)="alterarPagina(pagina - 1)" class="page-item " [ngClass]="{'disabled': pagina - 1 == 0}">
+        <a class="page-link" tabindex="-1"><i class="fa fa-angle-left"></i><span
+          class="sr-only">Anterior</span></a>
+      </li>
+      <li (click)="alterarPagina(pagina - 1)" *ngIf="pagina - 1 > 0" class="page-item">
+        <a class="page-link">{{pagina - 1}}</a>
+      </li>
+      <li class="page-item active"><a class="page-link">{{pagina}}</a></li>
+      <li (click)="alterarPagina(pagina + 1)" *ngIf="qtdPaginas - pagina > 0" class="page-item"><a
+        class="page-link">{{pagina + 1}}</a></li>
+      <li (click)="alterarPagina(pagina + 1)" class="page-item" [ngClass]="{'disabled':  qtdPaginas - pagina == 0}">
+        <a class="page-link"><i class="fa fa-angle-right"></i><span class="sr-only">Próxima</span></a></li>
+    </ul>
+  </nav>
+
+  <!--	<mat-spinner *ngIf="carregando" [diameter]="20"></mat-spinner>-->
+
+  <!--	<mat-paginator-->
+  <!--		(page)="paginaMudou($event)"-->
+  <!--		[length]="total"-->
+  <!--		[pageIndex]="pagina"-->
+  <!--		[pageSizeOptions]="[5, 10, 25, 100]"-->
+  <!--		[pageSize]="tamanhoPagina">-->
+  <!--	</mat-paginator>-->
+</div>

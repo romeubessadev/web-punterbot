@@ -1,0 +1,10 @@
+<app-button (bClick)="fotoUsuario.click()" [button]="btnFoto"></app-button>
+
+<input
+  #fotoUsuario type="file" class="d-none" (change)="fileChangeEvent($event)"/>
+
+
+<app-modal-image-resize *ngIf="imageChangedEvent" (eventEmitterImage)="eventImageCropped.emit($event)"
+                        [titulo]="titulo"
+                        [imageChangedEvent]="imageChangedEvent">
+</app-modal-image-resize>

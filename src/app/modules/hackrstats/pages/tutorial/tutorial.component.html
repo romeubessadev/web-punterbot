@@ -1,0 +1,78 @@
+<div id="content">
+  <div class="header pb-4 pt-6 pl-3">
+    <i class="fas fa-user-graduate pl-4"></i>
+    <span class="h4 pl-2">Área do Aluno</span>
+  </div>
+
+  <div class="container-fluid pb-4">
+    <div class="row">
+      <div class="col-xl-12 order-xl-1">
+        <div class="card bg-secondary shadow">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12 col-md-6 col-lg-6">
+                <app-select #tipoEstatistica [element]="selectTipoEstatistica"
+                            (change)="trocaTipoEstatistica()"></app-select>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div *ngFor="let btn of botoesCantos">
+                <div class="col-sm-8 mb-3 mr--4 pr-3" *ngIf="cantos">
+                  <app-button [button]="btn" (bClick)="pesquisar(btn)"></app-button>
+                </div>
+              </div>
+
+              <div *ngFor="let btn of botoesGols">
+                <div class="col-sm-auto mb-3 mr--4" *ngIf="gols">
+                  <app-button [button]="btn" (bClick)="pesquisar(btn)"></app-button>
+                </div>
+              </div>
+
+              <div *ngFor="let btn of botoesBot">
+                <div class="col-sm-auto mb-3 mr--4" *ngIf="bot">
+                  <app-button [button]="btn" (bClick)="pesquisar(btn)"></app-button>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="(cantos || gols) && pdfSrc != null">
+              <pdf-viewer [src]="pdfSrc"
+                          [render-text]="true"
+                          [show-all]="true"
+                          [show-borders]="true"
+                          [autoresize]="true"
+                          [render-text-mode]="true"
+                          [stick-to-page]="true"
+                          [rotation]="true"
+                          style="display: block;">
+              </pdf-viewer>
+            </div>
+
+            <div *ngIf="(cantos || gols) && pdfSrc === null" class="align-content-center">
+              <div id="empty">
+                <div class="row">
+                  <div class="col-12 text-center m-4">
+                    <h4 class="mr-5">Nenhum material foi encontrado!</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="video-container" *ngIf="bot && config">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/roxnztN-UeA" frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+            </div>
+
+            <div class="video-container" *ngIf="bot && estrategias">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/2aXRXl4tPn0" frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+.fade {
+  opacity: 0 !important;
+  transition: opacity .15s linear !important;
+}
+
+.fade.show {
+  opacity: 1  !important;
+}
+
+.show {
+  margin-top: 5px;
+  overflow-y: scroll;
+  display: block;
+}
+

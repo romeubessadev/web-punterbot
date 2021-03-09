@@ -1,0 +1,30 @@
+
+//.profile-cover {
+//  background-image: url("/assets/img/theme/profile-cover-2.png");
+//}
+
+.bg-transparent-login {
+  background-color: #ffffff00 !important;
+  border-radius: 10px;
+}
+
+.font-size-bem-vindo {
+  font-size: 15px;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #5e72e4;
+}
+
+.effect {
+  color: #fff !important;
+  transition: filter 0.2s;
+}
+
+.effect:hover {
+  filter: brightness(90%);
+}
+
+.imgs {
+  max-height: 1.5rem;
+}

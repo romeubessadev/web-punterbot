@@ -1,0 +1,22 @@
+<div class="row justify-content-center">
+  <div class="col-lg-5 col-md-7">
+    <div class="card flipInY animated bg-transparent-login border-0">
+      <div class="card-body px-lg-4 py-lg-4">
+        <h2 class="text-white font-weight-bold">Crie sua senha:</h2>
+        <form class="mt-2">
+          <app-login-input [element]="inputSenha" [form]="confirmaSenhaForm"></app-login-input>
+          <app-login-input [element]="inputConfirmaSenha" [form]="confirmaSenhaForm"></app-login-input>
+
+          <div class="row align-items-center pt-3">
+            <div class="col">
+            </div>
+            <div class="col-lg-4 col-sm-4 col-md-4 text-right pt-1">
+              <app-button (bClick)="ativar()" [disabled]="confirmaSenhaForm.invalid || notEquals"
+                          [button]="btnAtivar"></app-button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

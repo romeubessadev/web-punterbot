@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-header border-0" >
+    <h4 *ngIf="titulo" class="card-title"><i class="{{icon}}"></i> {{titulo}} </h4>
+    <ng-container *ngIf="header" [ngTemplateOutlet]="header"></ng-container>
+  </div>
+  <div class="card-body border-radius-bottom" [ngClass]="{'p-0': zeroPadding}">
+    <ng-content></ng-content>
+  </div>
+</div>

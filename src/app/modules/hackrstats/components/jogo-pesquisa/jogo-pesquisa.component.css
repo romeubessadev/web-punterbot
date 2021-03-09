@@ -1,0 +1,8 @@
+.icon-green {
+  color: #3c9a36;;
+  transition: filter 0.2s;
+}
+
+.icon-green:hover {
+  filter: brightness(90%);
+}

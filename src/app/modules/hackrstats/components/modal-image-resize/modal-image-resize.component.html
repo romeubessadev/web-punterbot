@@ -1,0 +1,19 @@
+<app-modal [titulo]="titulo">
+  <div class="row">
+    <div class="col-12">
+      <image-cropper
+        [imageChangedEvent]="imageChangedEvent"
+        format="png"
+        [roundCropper]="true"
+        (imageCropped)="imageCropped($event)"
+        (cropperReady)="cropperReady()"
+        (loadImageFailed)="loadImageFailed()">
+      </image-cropper>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-12 p-2">
+      <app-button (bClick)="salvarFoto()" [button]="btnSalvarFoto"></app-button>
+    </div>
+  </div>
+</app-modal>

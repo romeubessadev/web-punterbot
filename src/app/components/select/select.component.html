@@ -1,0 +1,8 @@
+<div class="form-group w-100" *ngIf="element" [formGroup]="form">
+  <label class="form-control-label" [for]="element.id">{{element.label}}</label>
+  <select [id]="element.id" [formControlName]="element.name" (select)="selectChange($event)"
+          class="form-control form-control-alternative " id="exampleFormControlSelect1">
+    <option *ngIf="element.mostraNenhum" [ngValue]="null">Nenhum</option>
+    <option *ngFor="let op of element.options" [ngValue]="op.value">{{op.label}}</option>
+  </select>
+</div>

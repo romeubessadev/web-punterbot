@@ -1,0 +1,48 @@
+<div id="content">
+  <div class="header pb-4 pt-6 pl-3">
+    <i class="fa-users fas pl-4"></i>
+    <span class="h4 pl-2">Grupo Exclusivo</span>
+  </div>
+
+  <div class="container-fluid pb-4">
+    <div class="row">
+      <div class="col-xl-12 order-xl-1">
+        <div class="card bg-secondary shadow">
+          <div class="card-body">
+            <div class="alert alert-secondary text-center" role="alert">
+              <i class="fab fa-telegram-plane"></i><strong> Passo 1:</strong>
+              Baixe e instale o aplicativo do Telegram no seu celular.
+
+              <div class="col-lg-12 p-2">
+                <app-button (bClick)="download(1)" [button]="btnApple"></app-button>
+                <app-button (bClick)="download(2)" [button]="btnAndroid"></app-button>
+              </div>
+
+            </div>
+
+            <div class="alert alert-secondary" role="alert">
+              <strong>Passo 2: </strong> Já baixou e instalou o aplicativo do Telegram? <strong>
+              <a href="#" class="text-gray-dark">Clique aqui </a></strong> para iniciar a conversa com o Punter Bot.
+            </div>
+
+            <div class="alert alert-secondary" role="alert">
+              <strong>Passo 3:</strong> Digite o comando
+              <strong>/start</strong>.
+            </div>
+
+            <div class="alert alert-secondary" role="alert">
+              <strong>Passo 4:</strong> Digite o e-mail da sua assinatura. Seu email será validado, e em seguida você
+              terá acesso aos menus <strong>exclusivo</strong> dos assinantes.
+            </div>
+
+            <div class="alert alert-primary" role="alert">
+              <strong>Pronto!</strong> Clique no menu <strong>PB Club</strong> e entre para o grupo exclusivo
+              de assinantes.
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

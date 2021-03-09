@@ -1,0 +1,13 @@
+<div class="material-switch pull-right" *ngIf="element" [formGroup]="form">
+  {{element.labelFalse}}
+  <input
+    [formControlName]="element.name"
+    [id]="element.id"
+    [name]="element.name"
+    type="checkbox"/>
+  <label
+    [for]="element.id"
+    class="label-{{element.color}}">
+  </label>
+  {{element.labelTrue}}
+</div>

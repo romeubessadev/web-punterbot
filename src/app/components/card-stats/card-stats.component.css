@@ -1,0 +1,13 @@
+.card-black-transparent {
+ background-color: #0000008a;
+}
+
+.btn-success {
+  background-color: #277444 !important;
+  border-color: #277444 !important;
+  transition: filter 0.2s;
+}
+
+.btn-success:hover {
+  filter: brightness(90%);
+}

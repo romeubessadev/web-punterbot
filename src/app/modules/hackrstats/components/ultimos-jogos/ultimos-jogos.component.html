@@ -1,0 +1,35 @@
+<div class="ultimo-joogos-content">
+  <app-grid [colunas]="colunas" [lista]="ultimosJogos">
+
+    <ng-template grid="data" let-row="row">
+      <h5>{{row.data| date: 'dd/MM/yy'}}</h5>
+    </ng-template>
+
+    <ng-template grid="timeCasaNome" let-row="row">
+      <span class="h5">{{row.timeCasaNome}}</span>
+    </ng-template>
+
+    <!--    todo adicionar calculo de ht e ft dos ultimos jogo na extracao -->
+    <ng-template grid="gols" let-row="row">
+      <app-badge class="mr-1" label="HT" color="success" badge="1-0" type="HT"></app-badge>
+      <app-badge label="FT" color="primary" type="FT" badge="2-0"></app-badge>
+      <button type="button" class="btn btn-secondary btn-sm ml-1" ngbTooltip="Ver partida" placement="top">
+        <i class="far fa-futbol"></i>
+      </button>
+    </ng-template>
+
+    <!--
+    <ng-template grid="cantos" let-row="row">
+      <app-badge class="mr-1" label="HT" color="success" type="HT" badge="5-1"></app-badge>
+      <app-badge label="FT" color="primary" type="FT" badge="12-5"></app-badge>
+      <button type="button" class="btn btn-secondary btn-sm ml-1" ngbTooltip="Ver partida" placement="top">
+        <i class="far fa-flag"></i>
+      </button>
+    </ng-template>
+    -->
+
+    <ng-template grid="timeVisitaNome" let-row="row">
+      <span class="h5">{{row.timeVisitaNome}}</span>
+    </ng-template>
+  </app-grid>
+</div>

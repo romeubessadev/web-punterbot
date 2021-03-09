@@ -1,0 +1,11 @@
+<div class="card-box bg-{{cor}} ">
+  <div class="inner">
+    <p>{{descricao}}</p>
+    <h3>{{quantidade}}</h3>
+  </div>
+  <div class="box-icon">
+    <span *ngIf="titulo">{{titulo}}</span>
+    <i *ngIf="icone" class="{{icone}}"></i>
+  </div>
+  <a class="card-box-footer">Ver Mais <i class="fa fa-arrow-circle-right"></i></a>
+</div>

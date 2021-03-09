@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+  <div class="col-lg-5 col-md-7">
+    <div class="card flipInY animated bg-transparent-login border-0">
+      <div class="card-body px-lg-4 py-lg-4">
+        <div class="row align-items-center">
+          <div class="col text-center mb-2">
+            <h4 class="text-white font-weight-bold">LOGIN:</h4>
+          </div>
+
+        </div>
+        <form class="mt-2" (ngSubmit)="login()">
+
+          <app-login-input [element]="inputEmail" [form]="loginForm"></app-login-input>
+
+          <app-login-input [element]="inputSenha" [form]="loginForm"></app-login-input>
+
+          <div class="row align-items-center pt-3">
+            <div class="col">
+              <i class="fa fa-lock m-r-5 mr-2 text-white"></i>
+              <a (click)="recuperarSenha()" class="text-light" style="cursor: pointer"><small class="effect">Esqueci
+                minha senha?</small></a>
+            </div>
+            <div class="col-lg-4 col-sm-4 col-md-4 text-right pt-1">
+              <app-button [disabled]="loginForm.invalid" [button]="btnEntrar"></app-button>
+            </div>
+          </div>
+
+          <div class="mt-3" *ngIf="recuperar">
+            <div class="alert alert-default alert-dismissible fade show" role="alert">
+              <span class="alert-text">Para recuperar sua senha <a href="#" class="text-white font-weight-bold">
+                clique aqui</a>. Depois digite o comando <strong>/help</strong>
+                e selecione a opção recuperar senha.</span>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="close()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

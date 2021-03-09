@@ -1,0 +1,40 @@
+<app-card id="content" *ngIf="liga" class="container-fluid mt--7">
+  <div class="row">
+    <div class="col-12">
+      <div class="row justify-content-center ">
+        <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+          <img [alt]="liga.nome" [src]="liga.logo">
+        </div>
+        <div class="col-lg-8 col-md-6 col-sm-12">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-12 text-center">
+              <app-mensagem scope="liga"></app-mensagem>
+            </div>
+          </div>
+          <form (ngSubmit)="salvar()">
+            <div class="row">
+              <div class="col-12">
+                <app-input [form]="ligaForm.form" [element]="ligaForm.nome"></app-input>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <app-button [disabled]="ligaForm.invalid"  [button]="btnSalvar"></app-button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <hr>
+      <div class="row justify-content-center">
+        <div id="temporadas" class="col-12">
+          <app-grid [lista]="liga.temporadas" [colunas]="colunasTemporadas  ">
+            <ng-template grid="atualTemporada" let-row="row">
+              <i *ngIf="row.atualTemporada" class="fa-check-circle fa text-success"></i>
+            </ng-template>
+          </app-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-card>

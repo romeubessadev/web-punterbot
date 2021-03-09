@@ -1,0 +1,10 @@
+<!-- Sidenav -->
+<app-sidebar [menuItems]="menuItems" [socialItems]="socialItems" [robotItems]="robotItems"></app-sidebar>
+<div id="mensagem-global">
+  <app-mensagem scope="global"></app-mensagem>
+</div>
+
+<div class="main-content">
+  <app-navbar></app-navbar>
+  <router-outlet></router-outlet>
+</div>
